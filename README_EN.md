@@ -8,7 +8,7 @@
 [![Zero Backend](https://img.shields.io/badge/Backend-None-brightgreen.svg)](#)
 [![Privacy](https://img.shields.io/badge/Privacy-100%25%20Browser-blue.svg)](#)
 
-[Live Demo](https://duck-ai.me/execho) | [中文](./README.md)
+[Live Demo](https://duck-ai-yy.github.io/execho) | [中文](./README.md)
 
 </div>
 
@@ -43,7 +43,7 @@ python3 -m http.server 8080
 # Open http://localhost:8080
 ```
 
-Or just visit the [Live Demo](https://duck-ai.me/execho).
+Or just visit the [Live Demo](https://duck-ai-yy.github.io/execho).
 
 ## How It Works
 

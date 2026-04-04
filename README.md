@@ -10,7 +10,7 @@ Upload WeChat chats. Clone your ex's texting style. Paste into any AI.
 [![Zero Backend](https://img.shields.io/badge/Backend-None-brightgreen.svg)](#)
 [![Privacy](https://img.shields.io/badge/Privacy-100%25%20Browser-blue.svg)](#)
 
-[在线体验 Live Demo](https://duck-ai.me/execho) | [English](./README_EN.md)
+[在线体验 Live Demo](https://duck-ai-yy.github.io/execho) | [English](./README_EN.md)
 
 </div>
 
@@ -38,7 +38,7 @@ Upload WeChat chats. Clone your ex's texting style. Paste into any AI.
 
 ## 快速开始
 
-1. 打开 [在线 Demo](https://duck-ai.me/execho)
+1. 打开 [在线 Demo](https://duck-ai-yy.github.io/execho)
 2. 点击「上传截图」或「粘贴文字」
 3. 选择你的前任是哪位
 4. 查看分析报告和五维得分
