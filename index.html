@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ExEcho 前任回声 — 用聊天记录复活TA的说话方式</title>
+  <meta name="description" content="上传微信聊天记录，生成前任的数字分身 Prompt。100%浏览器端运行，零后端，完全隐私。">
+  <meta property="og:title" content="ExEcho 前任回声">
+  <meta property="og:description" content="用聊天记录，复活TA的说话方式。不是为了回去，是为了看清。">
+  <meta property="og:type" content="website">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js" integrity="sha384-GJqSu7vueQ9qN0E9yLPb3Wtpd7OrgK8KmYzC8T1IysG1bcvxvIO4qtYR/D3A991F" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <!-- Hero -->
+  <header class="hero">
+    <div class="container">
+      <h1 data-i18n="hero.title">前任回声</h1>
+      <p class="subtitle" data-i18n="hero.subtitle">用聊天记录，复活TA的说话方式</p>
+      <p class="tagline" data-i18n="hero.tagline">不是为了回去，是为了看清</p>
+      <div class="privacy-badge" data-i18n="hero.privacy">🔒 所有数据不离开你的浏览器</div>
+      <div class="hero-buttons">
+        <button class="btn btn-primary" id="btn-upload" data-i18n="btn.upload">上传截图</button>
+        <button class="btn btn-primary" id="btn-paste" data-i18n="btn.paste">粘贴文字</button>
+        <button class="btn btn-secondary" id="btn-demo" data-i18n="btn.demo">试试看 Demo</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Demo Banner -->
+  <div class="demo-banner hidden" id="demo-banner" data-i18n="demo.banner">
+    📌 这是演示数据 — 上传你自己的聊天记录试试！
+  </div>
+
+  <!-- Input Section -->
+  <section class="input-section hidden" id="input-section">
+    <div class="container">
+      <div class="tabs">
+        <button class="tab active" id="tab-screenshot" data-i18n="tab.screenshot">截图识别</button>
+        <button class="tab" id="tab-text" data-i18n="tab.text">文字粘贴</button>
+      </div>
+
+      <!-- Screenshot Tab -->
+      <div id="panel-screenshot">
+        <div class="upload-zone" id="upload-zone">
+          <div class="upload-icon">📷</div>
+          <p data-i18n="ocr.dropHint">点击或拖拽微信截图到这里</p>
+          <p style="font-size:12px;color:#bbb;" data-i18n="ocr.multiHint">支持多张截图，按顺序识别</p>
+          <input type="file" id="file-input" accept="image/*" multiple hidden>
+        </div>
+        <div id="ocr-previews" class="ocr-previews"></div>
+        <div id="ocr-progress-wrap" class="hidden">
+          <div class="progress-bar"><div class="progress-fill" id="ocr-progress"></div></div>
+          <p class="progress-text" id="ocr-status"></p>
+        </div>
+      </div>
+
+      <!-- Text Tab -->
+      <div id="panel-text" class="hidden">
+        <textarea class="text-input" id="text-input" data-i18n="input.placeholder"></textarea>
+      </div>
+
+      <div class="analyze-btn-wrap">
+        <button class="btn btn-green btn-large" id="btn-analyze" data-i18n="btn.analyze">开始分析</button>
+      </div>
+      <div class="error-msg hidden" id="input-error"></div>
+    </div>
+  </section>
+
+  <!-- Speaker Selection -->
+  <section class="speaker-section hidden" id="speaker-section">
+    <div class="container">
+      <h2 data-i18n="speaker.title">我们识别到以下对话者</h2>
+      <p data-i18n="speaker.prompt">请选择你的前任是哪位：</p>
+      <div class="speaker-cards" id="speaker-cards"></div>
+      <button class="btn btn-green btn-large" id="btn-confirm-speaker" data-i18n="speaker.confirm">确认</button>
+    </div>
+  </section>
+
+  <!-- Loading -->
+  <section class="loading hidden" id="loading-section">
+    <div class="spinner"></div>
+    <p data-i18n="analyzing">正在分析...</p>
+  </section>
+
+  <!-- Analysis Dashboard -->
+  <section class="analysis-section hidden" id="analysis-section">
+    <div class="container">
+      <div class="analysis-header">
+        <h2 data-i18n="analysis.title">分析报告</h2>
+        <p class="analysis-meta" id="analysis-meta"></p>
+      </div>
+
+      <!-- Scores -->
+      <div class="scores-grid" id="scores-grid"></div>
+
+      <!-- Radar Chart -->
+      <div class="radar-wrap">
+        <svg class="radar-chart" id="radar-chart" viewBox="0 0 220 220"></svg>
+      </div>
+
+      <!-- Chat Preview -->
+      <div class="chat-preview" id="chat-preview"></div>
+
+      <!-- Detail Sections -->
+      <div id="detail-sections"></div>
+    </div>
+  </section>
+
+  <!-- Prompt Section -->
+  <section class="prompt-section hidden" id="prompt-section">
+    <div class="container">
+      <h2 data-i18n="prompt.title">TA的数字分身 Prompt</h2>
+
+      <div class="prompt-tabs">
+        <button class="prompt-tab active" data-mode="full" data-i18n="prompt.full">完整版</button>
+        <button class="prompt-tab" data-mode="compact" data-i18n="prompt.compact">精简版</button>
+      </div>
+
+      <div class="prompt-card" id="prompt-content"></div>
+
+      <div class="copy-wrap">
+        <button class="btn btn-copy" id="btn-copy" data-i18n="btn.copy">一键复制 Prompt</button>
+      </div>
+
+      <p class="ai-guide" data-i18n="prompt.guide">复制后粘贴到以下任意AI即可对话：</p>
+      <div class="ai-logos">
+        <span class="ai-link">ChatGPT</span>
+        <span class="ai-link">Kimi</span>
+        <span class="ai-link">豆包</span>
+        <span class="ai-link">Claude</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Share Section -->
+  <section class="share-section hidden" id="share-section">
+    <div class="container">
+      <h2 data-i18n="share.title">分享你的分析结果</h2>
+      <p class="share-note" data-i18n="share.note">分享图不含任何私人消息内容</p>
+      <button class="btn btn-green btn-large" id="btn-download" data-i18n="btn.download">下载分享图</button>
+      <div style="margin-top: 16px;">
+        <button class="btn btn-ghost" id="btn-restart" data-i18n="btn.back">重新开始</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p data-i18n="footer.privacy">本工具完全在浏览器端运行，不上传任何数据。关闭页面后所有数据消失。</p>
+    <p style="margin-top: 8px;">
+      <a href="https://github.com/duck-ai-yy/execho" target="_blank" data-i18n="footer.source">源代码</a>
+    </p>
+    <div class="lang-toggle">
+      <button class="lang-btn" id="lang-toggle">EN / 中</button>
+    </div>
+  </footer>
+
+  <!-- Canvas for share image (hidden) -->
+  <canvas id="share-canvas" width="1080" height="1920" style="display:none;"></canvas>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
