@@ -1,6 +1,6 @@
 const strings = {
   zh: {
-    'hero.title': '前任回声',
+    'hero.title': '前任AI',
     'hero.subtitle': '用聊天记录，复活TA的说话方式',
     'hero.tagline': '不是为了回去，是为了看清',
     'hero.privacy': '🔒 所有数据不离开你的浏览器',
@@ -79,7 +79,7 @@ const strings = {
     'ocr.noText': '未识别到文字，请确认截图是否清晰',
   },
   en: {
-    'hero.title': 'ExEcho',
+    'hero.title': 'Ex-AI',
     'hero.subtitle': "Clone your ex's texting style from chat history",
     'hero.tagline': 'Not to go back, but to see clearly',
     'hero.privacy': '🔒 All data stays in your browser',

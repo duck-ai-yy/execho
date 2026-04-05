@@ -584,7 +584,7 @@ $('btn-download').addEventListener('click', () => {
   ctx.fillStyle = '#111';
   ctx.font = 'bold 56px -apple-system, PingFang SC, sans-serif';
   ctx.textAlign = 'center';
-  ctx.fillText('前任回声 ExEcho', w / 2, cardY + 80);
+  ctx.fillText('前任AI Ex-AI', w / 2, cardY + 80);
 
   // Target name
   ctx.font = '36px -apple-system, PingFang SC, sans-serif';
@@ -637,19 +637,19 @@ $('btn-download').addEventListener('click', () => {
   // CTA
   ctx.fillStyle = '#999';
   ctx.font = '28px -apple-system, PingFang SC, sans-serif';
-  ctx.fillText('搜索 ExEcho 试试你的', w / 2, cardY + cardH - 80);
+  ctx.fillText('搜索 Ex-AI 试试你的', w / 2, cardY + cardH - 80);
 
   // Branding
   ctx.fillStyle = 'rgba(255,255,255,0.9)';
   ctx.font = 'bold 32px -apple-system, sans-serif';
-  ctx.fillText('ExEcho 前任回声', w / 2, h - 80);
+  ctx.fillText('前任AI Ex-AI', w / 2, h - 80);
   ctx.fillStyle = 'rgba(255,255,255,0.6)';
   ctx.font = '24px -apple-system, sans-serif';
   ctx.fillText('不是为了回去，是为了看清', w / 2, h - 40);
 
   // Download
   const link = document.createElement('a');
-  link.download = `execho-${analysisResult.targetName}.png`;
+  link.download = `ex-ai-${analysisResult.targetName}.png`;
   link.href = canvas.toDataURL('image/png');
   link.click();
 });

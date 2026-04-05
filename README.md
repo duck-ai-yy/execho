@@ -1,6 +1,6 @@
 <div align="center">
 
-# ExEcho 前任回声
+# 前任AI (Ex-AI)
 
 ### 前任.skill 的零门槛替代 — 不用安装，打开网页就能用
 
@@ -13,7 +13,7 @@ Upload WeChat chats. Clone your ex's texting style. Paste into any AI.
 [![Privacy](https://img.shields.io/badge/Privacy-100%25%20Browser-blue.svg)](#)
 [![No Install](https://img.shields.io/badge/Install-不用安装-orange.svg)](#)
 
-[在线体验 Live Demo](https://duck-ai-yy.github.io/execho) | [English](./README_EN.md)
+[在线体验 Live Demo](https://duck-ai-yy.github.io/ex-ai) | [English](./README_EN.md)
 
 </div>
 
@@ -23,7 +23,7 @@ Upload WeChat chats. Clone your ex's texting style. Paste into any AI.
 
 ## 和前任.skill / ex-skill 有什么不同？
 
-| | ExEcho 前任回声 | 前任.skill (ex-skill) |
+| | 前任AI (Ex-AI) | 前任.skill (ex-skill) |
 |---|---|---|
 | **使用门槛** | 打开网页就能用 | 需要安装 Claude Code |
 | **适合人群** | 所有人（非技术用户友好） | 开发者 |
@@ -32,9 +32,9 @@ Upload WeChat chats. Clone your ex's texting style. Paste into any AI.
 | **输入** | 微信截图 OCR / 粘贴文字 | 聊天记录文件导入 |
 | **输出** | 可复制的 Prompt + 五维分析报告 | Claude Skill |
 
-**如果你不是程序员，或者只想快速体验，ExEcho 是更好的选择。**
+**如果你不是程序员，或者只想快速体验，Ex-AI 是更好的选择。**
 
-上传微信聊天截图或粘贴聊天记录，ExEcho 会分析TA的说话风格，生成一个"数字分身" Prompt。把这个 Prompt 粘贴到任意免费 AI（ChatGPT、Kimi、豆包、Claude），就能再次和TA的说话方式对话。
+上传微信聊天截图或粘贴聊天记录，Ex-AI 会分析TA的说话风格，生成一个"数字分身" Prompt。把这个 Prompt 粘贴到任意免费 AI（ChatGPT、Kimi、豆包、Claude），就能再次和TA的说话方式对话。
 
 ## 功能
 
@@ -54,7 +54,7 @@ Upload WeChat chats. Clone your ex's texting style. Paste into any AI.
 
 ## 快速开始
 
-1. 打开 [在线 Demo](https://duck-ai-yy.github.io/execho)
+1. 打开 [在线 Demo](https://duck-ai-yy.github.io/ex-ai)
 2. 点击「上传截图」或「粘贴文字」
 3. 选择你的前任是哪位
 4. 查看分析报告和五维得分
@@ -75,8 +75,8 @@ Upload WeChat chats. Clone your ex's texting style. Paste into any AI.
 ## 本地运行
 
 ```bash
-git clone https://github.com/duck-ai-yy/execho.git
-cd execho
+git clone https://github.com/duck-ai-yy/ex-ai.git
+cd ex-ai
 python3 -m http.server 8080
 # 打开 http://localhost:8080
 ```
@@ -108,7 +108,7 @@ python3 -m http.server 8080
 ## 项目结构
 
 ```
-execho/
+ex-ai/
 ├── index.html      # 单页应用
 ├── style.css       # 微信风格 UI
 ├── app.js          # 流程控制
@@ -130,7 +130,7 @@ execho/
 
 ## 关键词
 
-前任.skill, ex-skill, 前任数字人, 前任AI, 微信聊天记录分析, 聊天风格克隆, AI数字分身, persona prompt, 同事.skill, colleague-skill, 前任回声, ExEcho
+前任.skill, ex-skill, 前任数字人, 前任AI, 微信聊天记录分析, 聊天风格克隆, AI数字分身, persona prompt, 同事.skill, colleague-skill, 前任AI, Ex-AI
 
 ## License
 
@@ -142,6 +142,6 @@ execho/
 
 **如果觉得有趣，给个 Star 吧 ⭐**
 
-*灵感来自 [同事.skill](https://github.com/titanwings/colleague-skill) 和 [前任.skill](https://github.com/therealXiaomanChu/ex-skill) — ExEcho 让每个人都能零门槛体验*
+*灵感来自 [同事.skill](https://github.com/titanwings/colleague-skill) 和 [前任.skill](https://github.com/therealXiaomanChu/ex-skill) — Ex-AI 让每个人都能零门槛体验*
 
 </div>

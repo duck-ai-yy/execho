@@ -1,6 +1,6 @@
 <div align="center">
 
-# ExEcho
+# Ex-AI
 
 ### Zero-install alternative to ex-skill / 前任.skill — just open the webpage
 
@@ -11,7 +11,7 @@
 [![Privacy](https://img.shields.io/badge/Privacy-100%25%20Browser-blue.svg)](#)
 [![No Install](https://img.shields.io/badge/Install-None-orange.svg)](#)
 
-[Live Demo](https://duck-ai-yy.github.io/execho) | [中文](./README.md)
+[Live Demo](https://duck-ai-yy.github.io/ex-ai) | [中文](./README.md)
 
 </div>
 
@@ -21,7 +21,7 @@
 
 ## How is this different from ex-skill?
 
-| | ExEcho | ex-skill (前任.skill) |
+| | Ex-AI | ex-skill (前任.skill) |
 |---|---|---|
 | **Setup** | Open a webpage | Install Claude Code |
 | **For** | Everyone (non-technical friendly) | Developers |
@@ -30,9 +30,9 @@
 | **Input** | Screenshot OCR / paste text | Chat file import |
 | **Output** | Copyable Prompt + 5D report | Claude Skill |
 
-**If you're not a developer, or just want to try it quickly, ExEcho is the easier choice.**
+**If you're not a developer, or just want to try it quickly, Ex-AI is the easier choice.**
 
-Upload WeChat screenshots or paste chat text. ExEcho analyzes the texting style and generates a persona prompt. Paste it into any free AI (ChatGPT, Kimi, Claude) to chat with your ex's digital clone.
+Upload WeChat screenshots or paste chat text. Ex-AI analyzes the texting style and generates a persona prompt. Paste it into any free AI (ChatGPT, Kimi, Claude) to chat with your ex's digital clone.
 
 ## Features
 
@@ -53,13 +53,13 @@ Upload WeChat screenshots or paste chat text. ExEcho analyzes the texting style 
 ## Quick Start
 
 ```bash
-git clone https://github.com/duck-ai-yy/execho.git
-cd execho
+git clone https://github.com/duck-ai-yy/ex-ai.git
+cd ex-ai
 python3 -m http.server 8080
 # Open http://localhost:8080
 ```
 
-Or just visit the [Live Demo](https://duck-ai-yy.github.io/execho).
+Or just visit the [Live Demo](https://duck-ai-yy.github.io/ex-ai).
 
 ## How It Works
 
