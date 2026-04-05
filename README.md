@@ -2,13 +2,16 @@
 
 # ExEcho 前任回声
 
-**用聊天记录，复活TA的说话方式**
+### 前任.skill 的零门槛替代 — 不用安装，打开网页就能用
+
+**上传微信聊天记录，生成前任的 AI 数字分身 Prompt**
 
 Upload WeChat chats. Clone your ex's texting style. Paste into any AI.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![Zero Backend](https://img.shields.io/badge/Backend-None-brightgreen.svg)](#)
 [![Privacy](https://img.shields.io/badge/Privacy-100%25%20Browser-blue.svg)](#)
+[![No Install](https://img.shields.io/badge/Install-不用安装-orange.svg)](#)
 
 [在线体验 Live Demo](https://duck-ai-yy.github.io/execho) | [English](./README_EN.md)
 
@@ -17,6 +20,19 @@ Upload WeChat chats. Clone your ex's texting style. Paste into any AI.
 ---
 
 > *不是为了回去，是为了看清。*
+
+## 和前任.skill / ex-skill 有什么不同？
+
+| | ExEcho 前任回声 | 前任.skill (ex-skill) |
+|---|---|---|
+| **使用门槛** | 打开网页就能用 | 需要安装 Claude Code |
+| **适合人群** | 所有人（非技术用户友好） | 开发者 |
+| **隐私** | 100% 浏览器端，零数据上传 | 数据经过 LLM API |
+| **费用** | 完全免费 | 需要 API 额度 |
+| **输入** | 微信截图 OCR / 粘贴文字 | 聊天记录文件导入 |
+| **输出** | 可复制的 Prompt + 五维分析报告 | Claude Skill |
+
+**如果你不是程序员，或者只想快速体验，ExEcho 是更好的选择。**
 
 上传微信聊天截图或粘贴聊天记录，ExEcho 会分析TA的说话风格，生成一个"数字分身" Prompt。把这个 Prompt 粘贴到任意免费 AI（ChatGPT、Kimi、豆包、Claude），就能再次和TA的说话方式对话。
 
@@ -112,6 +128,10 @@ execho/
 - 更有趣的评分标签文案
 - UI/UX 改进
 
+## 关键词
+
+前任.skill, ex-skill, 前任数字人, 前任AI, 微信聊天记录分析, 聊天风格克隆, AI数字分身, persona prompt, 同事.skill, colleague-skill, 前任回声, ExEcho
+
 ## License
 
 [MIT](LICENSE)
@@ -121,5 +141,7 @@ execho/
 <div align="center">
 
 **如果觉得有趣，给个 Star 吧 ⭐**
+
+*灵感来自 [同事.skill](https://github.com/titanwings/colleague-skill) 和 [前任.skill](https://github.com/therealXiaomanChu/ex-skill) — ExEcho 让每个人都能零门槛体验*
 
 </div>
